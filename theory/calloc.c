@@ -8,6 +8,7 @@ int main()
 {
     int *pointer;
 
+    // with calloc, all elements are set to zero
     pointer = calloc(5, sizeof(int));
 
     if (checkPointer(pointer))
