@@ -3,9 +3,9 @@
 
 int main()
 {
-    int *pointer;
+    char *pointer;
 
-    pointer = malloc(3 * sizeof(int));
+    pointer = malloc(6 * sizeof(char));
 
     if (pointer == NULL)
     {
@@ -13,12 +13,17 @@ int main()
         return 0;
     }
 
-    *pointer = 1;
-    pointer[1] = 2;
-    *(pointer + 2) = 3;
+    pointer[0] = 'H';
+    pointer[1] = 'e';
+    pointer[2] = 'l';
+    pointer[3] = 'l';
+    pointer[4] = 'o';
+    pointer[5] = '\n';
 
-    for (int i = 0; i < 3; i++)
-        printf("%d ", pointer[i]);
+    for (int i = 0; i < 6; i++)
+        printf("%c", pointer[i]);
+
+    free(pointer);
 
     return 0;
 }
