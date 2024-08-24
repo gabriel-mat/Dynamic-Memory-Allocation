@@ -7,9 +7,15 @@ int main()
 
     pointer = malloc(3 * sizeof(int));
 
-    *pointer = 0;
-    pointer[1] = 1;
-    *(pointer + 2) = 2;
+    if (pointer == NULL)
+    {
+        printf("Oops, no memory!\n");
+        return 0;
+    }
+
+    *pointer = 1;
+    pointer[1] = 2;
+    *(pointer + 2) = 3;
 
     for (int i = 0; i < 3; i++)
         printf("%d ", pointer[i]);
